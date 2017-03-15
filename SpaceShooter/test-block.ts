@@ -1,4 +1,6 @@
 
+/// <reference path="game.ts" />
+
 // Test block class
 //
 class TestBlock {

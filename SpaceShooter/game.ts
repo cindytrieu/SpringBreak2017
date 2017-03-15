@@ -1,4 +1,6 @@
 
+/// <reference path="test-block.ts" />
+
 // Define a shorter name for 'CanvasRenderingContext2d'
 //
 type gContext = CanvasRenderingContext2D;

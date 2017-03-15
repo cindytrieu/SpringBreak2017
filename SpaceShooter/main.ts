@@ -4,6 +4,9 @@ AUTHORS: Cindy Trieu, Mark Gardner
 COPYRIGHT 2017
 */
 
+/// <reference path="game.ts" />
+
+
 let game: Game;
 
 window.onload = function(){
