@@ -1,5 +1,5 @@
 
-/// <reference path="test-block.ts" />
+/// <reference path="enemy.ts" />
 
 // Define a shorter name for 'CanvasRenderingContext2d'
 //
@@ -15,7 +15,7 @@ class Game {
 	canvas: HTMLCanvasElement;
 	graphicsContext: gContext;
 
-	testBlock: TestBlock;
+	enemy: Enemy;
 
 	constructor() {
 		
@@ -27,13 +27,11 @@ class Game {
 
 		this.graphicsContext = this.canvas.getContext('2d');
 
-		// Create a test block
-		//
-		this.testBlock = new TestBlock();
+		this.enemy = new Enemy(300, 300);
 	}
 
 	update() {
-		this.testBlock.update();
+		this.enemy.update();
 	}
 
 	draw() {
@@ -43,6 +41,6 @@ class Game {
 		g.fillStyle = '#ccc';
 		g.fillRect(0, 0, Game.width, Game.height);
 
-		this.testBlock.draw(g);
+		this.enemy.draw(g);
 	}
 }

@@ -4,9 +4,11 @@ AUTHORS: Cindy Trieu, Mark Gardner
 COPYRIGHT 2017
 */
 body {
-
+	text-align: center;
 }
 
-head {
-
+canvas {
+	display: inline;
+	margin: 0;
+	padding: 20px;
 }

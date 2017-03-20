@@ -20,5 +20,5 @@ window.onload = function(){
 	window.setInterval(function(){
 		game.update();
 		game.draw();
-	}, 1000/30);	
+	}, 1000/30);
 }
