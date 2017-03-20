@@ -16,6 +16,7 @@ class Game {
 	graphicsContext: gContext;
 
 	testBlock: TestBlock;
+	player: Player;
 
 	constructor() {
 		
@@ -30,10 +31,14 @@ class Game {
 		// Create a test block
 		//
 		this.testBlock = new TestBlock();
+
+		// Create a new player
+		this.player = new Player();
 	}
 
 	update() {
 		this.testBlock.update();
+		this.player.update();
 	}
 
 	draw() {
@@ -44,5 +49,6 @@ class Game {
 		g.fillRect(0, 0, Game.width, Game.height);
 
 		this.testBlock.draw(g);
+		this.player.draw(g);
 	}
 }
