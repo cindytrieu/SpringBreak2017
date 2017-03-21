@@ -1,6 +1,8 @@
 
 /// <reference path="enemy.ts" />
 /// <reference path="gameObject.ts" />
+/// <reference path="starfield.ts" />
+
 
 
 // Define a shorter name for 'CanvasRenderingContext2d'
@@ -34,6 +36,8 @@ class Game {
 		//
 		this.enemy = new Enemy(300, 300);
 		this.player = new Player();
+
+		new Starfield();
 	}
 
 	update() {
@@ -44,7 +48,7 @@ class Game {
 		let g = this.graphicsContext;
 
 		// Clear screen
-		g.fillStyle = '#ccc';
+		g.fillStyle = '#000';
 		g.fillRect(0, 0, Game.width, Game.height);
 
 		GameObject.drawAllObjects(g);

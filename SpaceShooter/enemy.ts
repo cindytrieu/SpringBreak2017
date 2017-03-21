@@ -1,11 +1,14 @@
+/// <reference path="gameObject.ts" />
 
-class Enemy {
+class Enemy extends GameObject {
 
 	x: number;
 	y: number;
 	size: number;
 
 	constructor(x: number, y: number){
+		super();
+		
 		this.x = x;
 		this.y = y;
 		this.size = 30;

@@ -8,4 +8,8 @@ class Utils {
 			return val;
 		}
 	}
+
+	static randomRange(min: number, max: number){
+		return Math.random() * (max - min) + min;
+	}
 }
