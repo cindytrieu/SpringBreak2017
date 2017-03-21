@@ -8,17 +8,23 @@ class Player extends GameObject {
 	speed: number;
 	min: number;
 	size: number;
+	reload: number;
+	reloadTime: number;
 
 	constructor(){
 		super();
 		this.x = 100;
 		this.y = Game.height/2;
-		this.speed = 4;
-		this.min = 25;
-		this.size = 20;
+		this.speed = 6;
+		this.min = 50;
+		this.size = 40;
+		this.reload = 0;
+		this.reloadTime = 5;
 	}
 
 	update(){
+		this.reload--;
+
 		if(input.isKeyDown(Input.keyCodeLeft)){
 			this.x -= this.speed;
 		} 
@@ -34,13 +40,14 @@ class Player extends GameObject {
 		this.x = Utils.clamp(this.x, this.min, Game.width - this.min);
 		this.y = Utils.clamp(this.y, this.min, Game.height - this.min);
 
-		if(input.isKeyDown(Input.keyCodeZ)){
+		if(input.isKeyDown(Input.keyCodeZ) && this.reload <= 0){
 			this.shoot();
+			this.reload = this.reloadTime;
 		}
 	}
 
 	shoot(){
-		//b: new Bullet(this.x, this.y);
+		let b = new Bullet(this.x, this.y);
 	}
 
 	draw(g: gContext){
