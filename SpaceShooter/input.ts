@@ -4,6 +4,7 @@ class Input {
 	static keyCodeUp = 		38;
 	static keyCodeRight = 	39;
 	static keyCodeDown = 	40;
+	static keyCodeZ = 		90;
 
 	private keysDown: {[id: number]: boolean};
 

@@ -1,6 +1,8 @@
 /// <reference path="game.ts" />
+/// <reference path="gameObject.ts" />
 
-class Player {
+
+class Player extends GameObject {
 	x: number;
 	y: number;
 	speed: number;
@@ -8,6 +10,7 @@ class Player {
 	size: number;
 
 	constructor(){
+		super();
 		this.x = 100;
 		this.y = Game.height/2;
 		this.speed = 4;
@@ -30,6 +33,14 @@ class Player {
 		}
 		this.x = Utils.clamp(this.x, this.min, Game.width - this.min);
 		this.y = Utils.clamp(this.y, this.min, Game.height - this.min);
+
+		if(input.isKeyDown(Input.keyCodeZ)){
+			this.shoot();
+		}
+	}
+
+	shoot(){
+		//b: new Bullet(this.x, this.y);
 	}
 
 	draw(g: gContext){

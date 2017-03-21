@@ -1,5 +1,7 @@
 
 /// <reference path="enemy.ts" />
+/// <reference path="gameObject.ts" />
+
 
 // Define a shorter name for 'CanvasRenderingContext2d'
 //
@@ -35,8 +37,7 @@ class Game {
 	}
 
 	update() {
-		this.player.update();
-		this.enemy.update();
+		GameObject.updateAllObjects();
 	}
 
 	draw() {
@@ -46,7 +47,6 @@ class Game {
 		g.fillStyle = '#ccc';
 		g.fillRect(0, 0, Game.width, Game.height);
 
-		this.enemy.draw(g);
-		this.player.draw(g);
+		GameObject.drawAllObjects(g);
 	}
 }
